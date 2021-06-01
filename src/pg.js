@@ -10,11 +10,7 @@ const database = process.env.PG_DATABASE || 'postgres'
 const port = process.env.PG_PORT || 5432
 
 const pool = new Pool({
-  host,
-  user,
-  password,
-  database,
-  port,
+  connectionString: `postgres://wofugvoc:xxGe07qYx5o6aCa2kdVJYMh_n6Fg5OHb@john.db.elephantsql.com/wofugvoc`
 })
 
 const rows = async (SQL, ...params) => {

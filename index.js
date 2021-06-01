@@ -26,8 +26,6 @@ app.use((_, res, next) => {
 app.post("/post", async (req, res) => {
   const { name, message, email } = req.body
 
-  console.log(name, message, email);
-
   const SQL = `
   insert into users(user_name, user_email, user_message) values($1, $2, $3)
   `
@@ -62,8 +60,6 @@ app.post("/post", async (req, res) => {
       console.log('Email sent: ' + info.response);
     }
   });
-
-  console.log(email);
 
   res.status(201).send({message: "ok"})
 })
